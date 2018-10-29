@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+
+        <style>
+        
+            @import url('https://fonts.googleapis.com/css?family=Bungee');
+
+            body, html {
+                padding: 0;
+                margin: 0;
+                background-color: #A068DB;
+            }
+
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+
+            p {
+                color: #F2EA7C;
+                font-family: 'Bungee', cursive;
+                font-size: 60pt;
+                font-weight: 600;
+                z-index: 5;
+                padding-left: 220px;
+            }
+
+            #screen {
+                background-color: #A068DB;
+                position: fixed;
+                top: 0;
+                left: 30%;
+                z-index: 10;
+                height: 100vh;
+                width: 140%; 
+                transition: width 1.1s;               
+            }
+
+            #screen.start {
+                width: 0px;
+            }
+
+            #logo {
+                position:absolute;
+                left: 110%;
+                width: 150px;                
+                height: 150px;
+                z-index: 15;
+                transform: rotate(360deg);
+                transition: all 1s cubic-bezier(.4,.24,.57,1.2);
+            }
+
+            #logo.start {
+                left: 31%;     
+                transform: rotate(0deg);
+            }
+        </style>
+    </head>
+    <body>        
+        <p>
+            ANIEL PERSSON
+        </p>
+        <img id="logo" src="images/Yellow-01.svg"/>
+        <div id="screen"></div>
+
+        <script>
+            setTimeout(function() {
+                var screen = document.getElementById('screen');
+                var logo = document.getElementById('logo');
+                screen.className = 'start';
+                logo.className = 'start';
+            }, 50);
+        </script>
+    </body>
+</html>
